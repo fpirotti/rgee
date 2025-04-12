@@ -121,7 +121,7 @@ ee_install <- function(py_env = "rgee",
 
   message("\n", bold(sprintf("2. Creating a Python Environment (%s)", py_env)))
   rgee_path <- tryCatch(
-    expr = ee_install_create_pyenv(python_version = python_version, py_env = py_env),
+    expr = ee_install_create_pyenv(python_version = as.character(python_version), py_env = py_env),
     error = function(e) stop(
       "An error occur when ee_install was creating the Python Environment. ",
       "Run ee_clean_pyenv() and restart the R session, before trying again."
